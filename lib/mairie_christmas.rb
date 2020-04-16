@@ -19,7 +19,7 @@ def get_townhall_urls(page)
   villes = []
   page.css("a.lientxt").each do |ville| 
     villes << {"nom" => ville.text, "email" => get_townhall_email(url + ville["href"].sub!("./", "")) }
-    print "Scrapping en cours, veuillez patienter... \r" 
+    print "Scrapping en cours, veuillez patienter...     Ville : #{ville.text} \r" 
   end
   return villes
 end
